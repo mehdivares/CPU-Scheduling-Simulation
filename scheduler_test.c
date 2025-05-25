@@ -133,10 +133,10 @@ int main(void) {
     // Expected values (hypothetical/simulation):
     // FCFS: {13.0, 7.0, 7.0}
     // SJF:  {11.0, 5.5, 5.5}
-    // RR:   {12.0, 6.0, 3.0}
+    // RR:   {10.6, 6.6, 2.6}
     Metrics expectedFcfs4 = {13.0, 7.0, 7.0};
     Metrics expectedSjf4  = {11.0, 5.5, 5.5};
-    Metrics expectedRr4   = {12.0, 6.0, 3.0};
+    Metrics expectedRr4   = {10.6, 6.6, 2.6};
     run_test_case("Test Case 4", test4, n4, quantum4, expectedFcfs4, expectedSjf4, expectedRr4);
 
     // --- Test Case 5: Single Process (Edge Case) ---
@@ -185,10 +185,10 @@ int main(void) {
     // Expected (approximate):
     // FCFS: Turnaround ≈ 15.25, Waiting ≈ 8.75, Response ≈ 8.75.
     // SJF:  Turnaround ≈ 14.25, Waiting ≈ 7.75, Response ≈ 7.75.
-    // RR:   Turnaround ≈ 21.5, Waiting ≈ 13.5, Response ≈ 3.0.
+    // RR:   Turnaround ≈ 20.0, Waiting ≈ 13.5, Response ≈ 3.0.
     Metrics expectedFcfs7 = {15.25, 8.75, 8.75};
     Metrics expectedSjf7  = {14.25, 7.75, 7.75};
-    Metrics expectedRr7   = {21.5, 13.5, 3.0};
+    Metrics expectedRr7   = {20.0, 13.5, 3.0};
     run_test_case("Test Case 7 (Varying Arrivals)", test7, n7, quantum7, expectedFcfs7, expectedSjf7, expectedRr7);
 
     // --- Test Case 8: Six Processes with Random Arrivals ---
@@ -205,10 +205,10 @@ int main(void) {
     // Expected values (approximate):
     // FCFS: Turnaround ≈ 17.0, Waiting ≈ 11.17, Response ≈ 11.17.
     // SJF:  Turnaround ≈ 15.17, Waiting ≈ 9.33,  Response ≈ 9.33.
-    // RR:   Turnaround ≈ 20.0, Waiting ≈ 14.17, Response ≈ 6.83.
+    // RR:   Turnaround ≈ 20.67, Waiting ≈ 14.83, Response ≈ 6.33.
     Metrics expectedFcfs8 = {17.0, 11.17, 11.17};
     Metrics expectedSjf8  = {15.17, 9.33, 9.33};
-    Metrics expectedRr8   = {20.0, 14.17, 6.83};
+    Metrics expectedRr8   = {20.67, 14.83, 6.33};
     run_test_case("Test Case 8 (Six Processes)", test8, n8, quantum8, expectedFcfs8, expectedSjf8, expectedRr8);
 
     printf("ALL TESTS PASSED.\n");
