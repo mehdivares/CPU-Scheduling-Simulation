@@ -13,69 +13,23 @@ Each algorithm computes the following performance metrics:
 - Average Waiting Time
 - Average Response Time
 
-## File Structure
+
+## Example Output 
 
 ```
-.
-├── scheduler.h         # Declarations for structs and scheduling functions
-├── scheduler.c         # Implementation of the scheduling algorithms
-├── scheduler_test.c    # Test cases and assertions for validating correctness
-├── Makefile            # Build automation script
-└── README.md           # Project documentation (this file)
-```
+=== FCFS ===
+Average Turnaround Time = 8.00
+Average Waiting Time    = 4.00
+Average Response Time   = 4.00
 
-## How to Compile
+=== SJF (Non-preemptive) ===
+Average Turnaround Time = 7.00
+Average Waiting Time    = 3.00
+Average Response Time   = 3.00
 
-To build the project, simply use:
-
-```bash
-make
-```
-
-This compiles the source files and produces an executable named `scheduler_test`.
-
-## How to Run
-
-To run the compiled test program:
-
-```bash
-make run
-```
-
-This will execute the scheduler tests and print the calculated vs. expected metrics for:
-- FCFS
-- SJF
-- Round Robin (with specified quantum)
-
-If all assertions pass, you will see:
+=== Round Robin (Quantum = 2) ===
+Average Turnaround Time = 7.33
+Average Waiting Time    = 3.33
+Average Response Time   = 0.67
 
 ```
->>> Test Case X PASSED.
-...
-ALL TESTS PASSED.
-```
-
-## How to Clean
-
-To remove the compiled binary:
-
-```bash
-make clean
-```
-
-## Example Output (Truncated)
-
-```
-==== Test Case 1 ====
-FCFS: Calculated: Turnaround: 15.00, Waiting: 7.33, Response: 7.33
-      Expected:   Turnaround: 15.00, Waiting: 7.33, Response: 7.33
-SJF:  ...
-RR (Quantum = 4): ...
->>> Test Case 1 PASSED.
-```
-
-## Notes
-
-- The `Process` struct contains fields for tracking all timing metrics.
-- All algorithms are non-preemptive except RR which uses time slicing.
-- The project is written in standard C and should work on any Unix-like system (Linux, macOS, WSL).
